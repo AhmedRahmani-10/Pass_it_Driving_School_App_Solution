@@ -1,6 +1,5 @@
 
-
-# Pass It Driving School Desktop Software Project (HCI)
+# Pass It Driving School Desktop Software Project of HCI 
 
 ## Objectives
 This project demonstrates the Human Computer Interaction (HCI) principles and standards, with a focus on Human Factors by:
