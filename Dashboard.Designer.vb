@@ -54,7 +54,6 @@ Partial Class Dashboard
         DHeadLbl_Title = New Label()
         DCloseBtn_Icon = New PictureBox()
         AppLogoTitle = New PictureBox()
-        AppLogo = New PictureBox()
         Header_Underline = New Panel()
         DMenuIcon_Courses = New PictureBox()
         DMenuIcon_Learners = New PictureBox()
@@ -66,6 +65,7 @@ Partial Class Dashboard
         Dashboard_InfoBox_learners = New Panel()
         DMenuIcon_BookLessons = New PictureBox()
         DMiniBtn_Icon = New PictureBox()
+        D_Logout_Lbl = New Label()
         Dashboard_InfoBox_revenue.SuspendLayout()
         Dashboard_InfoBox2_revenue.SuspendLayout()
         Dashboard_InfoBox_Lessons.SuspendLayout()
@@ -81,7 +81,6 @@ Partial Class Dashboard
         CType(DMenuIcon_Dashboard, ComponentModel.ISupportInitialize).BeginInit()
         CType(DCloseBtn_Icon, ComponentModel.ISupportInitialize).BeginInit()
         CType(AppLogoTitle, ComponentModel.ISupportInitialize).BeginInit()
-        CType(AppLogo, ComponentModel.ISupportInitialize).BeginInit()
         CType(DMenuIcon_Courses, ComponentModel.ISupportInitialize).BeginInit()
         CType(DMenuIcon_Learners, ComponentModel.ISupportInitialize).BeginInit()
         Dashboard_InfoBox_trainers.SuspendLayout()
@@ -109,7 +108,7 @@ Partial Class Dashboard
         Dashboard_InfoLbl2_learners.AutoSize = True
         Dashboard_InfoLbl2_learners.BackColor = Color.Transparent
         Dashboard_InfoLbl2_learners.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Dashboard_InfoLbl2_learners.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        Dashboard_InfoLbl2_learners.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         Dashboard_InfoLbl2_learners.Location = New Point(129, 21)
         Dashboard_InfoLbl2_learners.Name = "Dashboard_InfoLbl2_learners"
         Dashboard_InfoLbl2_learners.Size = New Size(56, 45)
@@ -118,7 +117,9 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox_revenue
         ' 
-        Dashboard_InfoBox_revenue.BackColor = Color.Gold
+        Dashboard_InfoBox_revenue.BackColor = Color.Transparent
+        Dashboard_InfoBox_revenue.BackgroundImage = CType(resources.GetObject("Dashboard_InfoBox_revenue.BackgroundImage"), Image)
+        Dashboard_InfoBox_revenue.BackgroundImageLayout = ImageLayout.Stretch
         Dashboard_InfoBox_revenue.Controls.Add(Dashboard_InfoLbl_revenue)
         Dashboard_InfoBox_revenue.Controls.Add(Dashboard_InfoBox2_revenue)
         Dashboard_InfoBox_revenue.Location = New Point(448, 370)
@@ -140,7 +141,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox2_revenue
         ' 
-        Dashboard_InfoBox2_revenue.BackColor = Color.Cornsilk
+        Dashboard_InfoBox2_revenue.BackColor = Color.Transparent
         Dashboard_InfoBox2_revenue.Controls.Add(Dashboard_InfoLbl2_revenue)
         Dashboard_InfoBox2_revenue.Location = New Point(5, 7)
         Dashboard_InfoBox2_revenue.Name = "Dashboard_InfoBox2_revenue"
@@ -152,7 +153,7 @@ Partial Class Dashboard
         Dashboard_InfoLbl2_revenue.AutoSize = True
         Dashboard_InfoLbl2_revenue.BackColor = Color.Transparent
         Dashboard_InfoLbl2_revenue.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Dashboard_InfoLbl2_revenue.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(192))
+        Dashboard_InfoLbl2_revenue.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         Dashboard_InfoLbl2_revenue.Location = New Point(91, 21)
         Dashboard_InfoLbl2_revenue.Name = "Dashboard_InfoLbl2_revenue"
         Dashboard_InfoLbl2_revenue.Size = New Size(128, 45)
@@ -161,7 +162,9 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox_Lessons
         ' 
-        Dashboard_InfoBox_Lessons.BackColor = Color.Gold
+        Dashboard_InfoBox_Lessons.BackColor = Color.Transparent
+        Dashboard_InfoBox_Lessons.BackgroundImage = CType(resources.GetObject("Dashboard_InfoBox_Lessons.BackgroundImage"), Image)
+        Dashboard_InfoBox_Lessons.BackgroundImageLayout = ImageLayout.Stretch
         Dashboard_InfoBox_Lessons.Controls.Add(Dashboard_InfoLbl_Lessons)
         Dashboard_InfoBox_Lessons.Controls.Add(Dashboard_InfoBox2_Lessons)
         Dashboard_InfoBox_Lessons.Location = New Point(55, 370)
@@ -183,7 +186,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox2_Lessons
         ' 
-        Dashboard_InfoBox2_Lessons.BackColor = Color.Cornsilk
+        Dashboard_InfoBox2_Lessons.BackColor = Color.Transparent
         Dashboard_InfoBox2_Lessons.Controls.Add(Dashboard_InfoLbl2_Lessons)
         Dashboard_InfoBox2_Lessons.Location = New Point(5, 7)
         Dashboard_InfoBox2_Lessons.Name = "Dashboard_InfoBox2_Lessons"
@@ -195,7 +198,7 @@ Partial Class Dashboard
         Dashboard_InfoLbl2_Lessons.AutoSize = True
         Dashboard_InfoLbl2_Lessons.BackColor = Color.Transparent
         Dashboard_InfoLbl2_Lessons.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Dashboard_InfoLbl2_Lessons.ForeColor = Color.FromArgb(CByte(72), CByte(113), CByte(232))
+        Dashboard_InfoLbl2_Lessons.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         Dashboard_InfoLbl2_Lessons.Location = New Point(132, 21)
         Dashboard_InfoLbl2_Lessons.Name = "Dashboard_InfoLbl2_Lessons"
         Dashboard_InfoLbl2_Lessons.Size = New Size(56, 45)
@@ -204,7 +207,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox2_learners
         ' 
-        Dashboard_InfoBox2_learners.BackColor = Color.Cornsilk
+        Dashboard_InfoBox2_learners.BackColor = Color.Transparent
         Dashboard_InfoBox2_learners.Controls.Add(Dashboard_InfoLbl2_learners)
         Dashboard_InfoBox2_learners.Location = New Point(5, 7)
         Dashboard_InfoBox2_learners.Name = "Dashboard_InfoBox2_learners"
@@ -213,7 +216,8 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox_Pass
         ' 
-        Dashboard_InfoBox_Pass.BackColor = Color.Gold
+        Dashboard_InfoBox_Pass.BackColor = Color.Transparent
+        Dashboard_InfoBox_Pass.BackgroundImage = CType(resources.GetObject("Dashboard_InfoBox_Pass.BackgroundImage"), Image)
         Dashboard_InfoBox_Pass.BackgroundImageLayout = ImageLayout.Stretch
         Dashboard_InfoBox_Pass.Controls.Add(Dashboard_InfoLbl_Pass)
         Dashboard_InfoBox_Pass.Controls.Add(Dashboard_InfoBox2_Pass)
@@ -236,7 +240,8 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox2_Pass
         ' 
-        Dashboard_InfoBox2_Pass.BackColor = Color.Cornsilk
+        Dashboard_InfoBox2_Pass.BackColor = Color.Transparent
+        Dashboard_InfoBox2_Pass.BackgroundImageLayout = ImageLayout.Stretch
         Dashboard_InfoBox2_Pass.Controls.Add(Dashboard_InfoLbl2_Pass)
         Dashboard_InfoBox2_Pass.Location = New Point(5, 7)
         Dashboard_InfoBox2_Pass.Name = "Dashboard_InfoBox2_Pass"
@@ -248,7 +253,7 @@ Partial Class Dashboard
         Dashboard_InfoLbl2_Pass.AutoSize = True
         Dashboard_InfoLbl2_Pass.BackColor = Color.Transparent
         Dashboard_InfoLbl2_Pass.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Dashboard_InfoLbl2_Pass.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        Dashboard_InfoLbl2_Pass.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         Dashboard_InfoLbl2_Pass.Location = New Point(108, 21)
         Dashboard_InfoLbl2_Pass.Name = "Dashboard_InfoLbl2_Pass"
         Dashboard_InfoLbl2_Pass.Size = New Size(93, 45)
@@ -258,10 +263,11 @@ Partial Class Dashboard
         ' DMenuIcon_Logout
         ' 
         DMenuIcon_Logout.BackColor = Color.Transparent
+        DMenuIcon_Logout.BackgroundImageLayout = ImageLayout.Stretch
         DMenuIcon_Logout.Image = CType(resources.GetObject("DMenuIcon_Logout.Image"), Image)
         DMenuIcon_Logout.Location = New Point(10, 760)
         DMenuIcon_Logout.Name = "DMenuIcon_Logout"
-        DMenuIcon_Logout.Size = New Size(24, 24)
+        DMenuIcon_Logout.Size = New Size(30, 30)
         DMenuIcon_Logout.SizeMode = PictureBoxSizeMode.StretchImage
         DMenuIcon_Logout.TabIndex = 29
         DMenuIcon_Logout.TabStop = False
@@ -271,7 +277,7 @@ Partial Class Dashboard
         DMenuName_BookLessons.AutoSize = True
         DMenuName_BookLessons.BackColor = Color.Transparent
         DMenuName_BookLessons.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DMenuName_BookLessons.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        DMenuName_BookLessons.ForeColor = Color.White
         DMenuName_BookLessons.Location = New Point(876, 771)
         DMenuName_BookLessons.Name = "DMenuName_BookLessons"
         DMenuName_BookLessons.Size = New Size(111, 21)
@@ -283,8 +289,8 @@ Partial Class Dashboard
         DMenuName_Courses.AutoSize = True
         DMenuName_Courses.BackColor = Color.Transparent
         DMenuName_Courses.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DMenuName_Courses.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        DMenuName_Courses.Location = New Point(742, 771)
+        DMenuName_Courses.ForeColor = Color.White
+        DMenuName_Courses.Location = New Point(741, 771)
         DMenuName_Courses.Name = "DMenuName_Courses"
         DMenuName_Courses.Size = New Size(69, 21)
         DMenuName_Courses.TabIndex = 26
@@ -295,8 +301,8 @@ Partial Class Dashboard
         DMenuName_Trainers.AutoSize = True
         DMenuName_Trainers.BackColor = Color.Transparent
         DMenuName_Trainers.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DMenuName_Trainers.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        DMenuName_Trainers.Location = New Point(586, 771)
+        DMenuName_Trainers.ForeColor = Color.White
+        DMenuName_Trainers.Location = New Point(584, 771)
         DMenuName_Trainers.Name = "DMenuName_Trainers"
         DMenuName_Trainers.Size = New Size(70, 21)
         DMenuName_Trainers.TabIndex = 24
@@ -306,9 +312,9 @@ Partial Class Dashboard
         ' 
         DMenuIcon_Trainers.BackColor = Color.Transparent
         DMenuIcon_Trainers.Image = CType(resources.GetObject("DMenuIcon_Trainers.Image"), Image)
-        DMenuIcon_Trainers.Location = New Point(605, 734)
+        DMenuIcon_Trainers.Location = New Point(599, 732)
         DMenuIcon_Trainers.Name = "DMenuIcon_Trainers"
-        DMenuIcon_Trainers.Size = New Size(32, 32)
+        DMenuIcon_Trainers.Size = New Size(40, 40)
         DMenuIcon_Trainers.SizeMode = PictureBoxSizeMode.StretchImage
         DMenuIcon_Trainers.TabIndex = 23
         DMenuIcon_Trainers.TabStop = False
@@ -317,16 +323,18 @@ Partial Class Dashboard
         ' 
         DHeadIcon_Title.BackColor = Color.Transparent
         DHeadIcon_Title.Image = CType(resources.GetObject("DHeadIcon_Title.Image"), Image)
-        DHeadIcon_Title.Location = New Point(26, 17)
+        DHeadIcon_Title.Location = New Point(26, 15)
         DHeadIcon_Title.Name = "DHeadIcon_Title"
-        DHeadIcon_Title.Size = New Size(32, 32)
+        DHeadIcon_Title.Size = New Size(40, 40)
         DHeadIcon_Title.SizeMode = PictureBoxSizeMode.StretchImage
         DHeadIcon_Title.TabIndex = 19
         DHeadIcon_Title.TabStop = False
         ' 
         ' Dashboard_InfoBox_courses
         ' 
-        Dashboard_InfoBox_courses.BackColor = Color.Gold
+        Dashboard_InfoBox_courses.BackColor = Color.Transparent
+        Dashboard_InfoBox_courses.BackgroundImage = CType(resources.GetObject("Dashboard_InfoBox_courses.BackgroundImage"), Image)
+        Dashboard_InfoBox_courses.BackgroundImageLayout = ImageLayout.Stretch
         Dashboard_InfoBox_courses.Controls.Add(Dashboard_InfoLbl_courses)
         Dashboard_InfoBox_courses.Controls.Add(Dashboard_InfoBox2_courses)
         Dashboard_InfoBox_courses.Location = New Point(841, 146)
@@ -348,7 +356,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox2_courses
         ' 
-        Dashboard_InfoBox2_courses.BackColor = Color.Cornsilk
+        Dashboard_InfoBox2_courses.BackColor = Color.Transparent
         Dashboard_InfoBox2_courses.Controls.Add(Dashboard_InfoLbl2_courses)
         Dashboard_InfoBox2_courses.Location = New Point(5, 7)
         Dashboard_InfoBox2_courses.Name = "Dashboard_InfoBox2_courses"
@@ -360,7 +368,7 @@ Partial Class Dashboard
         Dashboard_InfoLbl2_courses.AutoSize = True
         Dashboard_InfoLbl2_courses.BackColor = Color.Transparent
         Dashboard_InfoLbl2_courses.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Dashboard_InfoLbl2_courses.ForeColor = Color.ForestGreen
+        Dashboard_InfoLbl2_courses.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         Dashboard_InfoLbl2_courses.Location = New Point(132, 21)
         Dashboard_InfoLbl2_courses.Name = "Dashboard_InfoLbl2_courses"
         Dashboard_InfoLbl2_courses.Size = New Size(38, 45)
@@ -372,8 +380,8 @@ Partial Class Dashboard
         DMenuName_Learners.AutoSize = True
         DMenuName_Learners.BackColor = Color.Transparent
         DMenuName_Learners.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DMenuName_Learners.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        DMenuName_Learners.Location = New Point(429, 771)
+        DMenuName_Learners.ForeColor = Color.White
+        DMenuName_Learners.Location = New Point(428, 771)
         DMenuName_Learners.Name = "DMenuName_Learners"
         DMenuName_Learners.Size = New Size(74, 21)
         DMenuName_Learners.TabIndex = 22
@@ -384,7 +392,7 @@ Partial Class Dashboard
         DMenuName_Dashboard.AutoSize = True
         DMenuName_Dashboard.BackColor = Color.Transparent
         DMenuName_Dashboard.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DMenuName_Dashboard.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        DMenuName_Dashboard.ForeColor = Color.White
         DMenuName_Dashboard.Location = New Point(265, 771)
         DMenuName_Dashboard.Name = "DMenuName_Dashboard"
         DMenuName_Dashboard.Size = New Size(93, 21)
@@ -395,9 +403,9 @@ Partial Class Dashboard
         ' 
         DMenuIcon_Dashboard.BackColor = Color.Transparent
         DMenuIcon_Dashboard.Image = CType(resources.GetObject("DMenuIcon_Dashboard.Image"), Image)
-        DMenuIcon_Dashboard.Location = New Point(295, 734)
+        DMenuIcon_Dashboard.Location = New Point(291, 734)
         DMenuIcon_Dashboard.Name = "DMenuIcon_Dashboard"
-        DMenuIcon_Dashboard.Size = New Size(32, 32)
+        DMenuIcon_Dashboard.Size = New Size(40, 40)
         DMenuIcon_Dashboard.SizeMode = PictureBoxSizeMode.StretchImage
         DMenuIcon_Dashboard.TabIndex = 19
         DMenuIcon_Dashboard.TabStop = False
@@ -406,11 +414,11 @@ Partial Class Dashboard
         ' 
         DHeadLbl_Title.AutoSize = True
         DHeadLbl_Title.BackColor = Color.Transparent
-        DHeadLbl_Title.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DHeadLbl_Title.ForeColor = Color.FromArgb(CByte(72), CByte(113), CByte(232))
-        DHeadLbl_Title.Location = New Point(68, 19)
+        DHeadLbl_Title.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DHeadLbl_Title.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
+        DHeadLbl_Title.Location = New Point(68, 22)
         DHeadLbl_Title.Name = "DHeadLbl_Title"
-        DHeadLbl_Title.Size = New Size(217, 30)
+        DHeadLbl_Title.Size = New Size(252, 32)
         DHeadLbl_Title.TabIndex = 20
         DHeadLbl_Title.Text = "Dashboard Overview"
         ' 
@@ -430,27 +438,16 @@ Partial Class Dashboard
         ' 
         AppLogoTitle.BackColor = Color.Transparent
         AppLogoTitle.Image = CType(resources.GetObject("AppLogoTitle.Image"), Image)
-        AppLogoTitle.Location = New Point(395, 20)
+        AppLogoTitle.Location = New Point(11, 6)
         AppLogoTitle.Name = "AppLogoTitle"
-        AppLogoTitle.Size = New Size(444, 36)
+        AppLogoTitle.Size = New Size(297, 50)
         AppLogoTitle.SizeMode = PictureBoxSizeMode.StretchImage
         AppLogoTitle.TabIndex = 17
         AppLogoTitle.TabStop = False
         ' 
-        ' AppLogo
-        ' 
-        AppLogo.BackColor = Color.Transparent
-        AppLogo.Image = CType(resources.GetObject("AppLogo.Image"), Image)
-        AppLogo.Location = New Point(10, 9)
-        AppLogo.Name = "AppLogo"
-        AppLogo.Size = New Size(167, 47)
-        AppLogo.SizeMode = PictureBoxSizeMode.StretchImage
-        AppLogo.TabIndex = 16
-        AppLogo.TabStop = False
-        ' 
         ' Header_Underline
         ' 
-        Header_Underline.BackColor = Color.Gold
+        Header_Underline.BackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         Header_Underline.Location = New Point(22, 57)
         Header_Underline.Name = "Header_Underline"
         Header_Underline.Size = New Size(1168, 2)
@@ -460,9 +457,9 @@ Partial Class Dashboard
         ' 
         DMenuIcon_Courses.BackColor = Color.Transparent
         DMenuIcon_Courses.Image = CType(resources.GetObject("DMenuIcon_Courses.Image"), Image)
-        DMenuIcon_Courses.Location = New Point(760, 734)
+        DMenuIcon_Courses.Location = New Point(753, 728)
         DMenuIcon_Courses.Name = "DMenuIcon_Courses"
-        DMenuIcon_Courses.Size = New Size(32, 32)
+        DMenuIcon_Courses.Size = New Size(44, 44)
         DMenuIcon_Courses.SizeMode = PictureBoxSizeMode.StretchImage
         DMenuIcon_Courses.TabIndex = 25
         DMenuIcon_Courses.TabStop = False
@@ -471,16 +468,18 @@ Partial Class Dashboard
         ' 
         DMenuIcon_Learners.BackColor = Color.Transparent
         DMenuIcon_Learners.Image = CType(resources.GetObject("DMenuIcon_Learners.Image"), Image)
-        DMenuIcon_Learners.Location = New Point(450, 734)
+        DMenuIcon_Learners.Location = New Point(445, 732)
         DMenuIcon_Learners.Name = "DMenuIcon_Learners"
-        DMenuIcon_Learners.Size = New Size(32, 32)
+        DMenuIcon_Learners.Size = New Size(40, 40)
         DMenuIcon_Learners.SizeMode = PictureBoxSizeMode.StretchImage
         DMenuIcon_Learners.TabIndex = 21
         DMenuIcon_Learners.TabStop = False
         ' 
         ' Dashboard_InfoBox_trainers
         ' 
-        Dashboard_InfoBox_trainers.BackColor = Color.Gold
+        Dashboard_InfoBox_trainers.BackColor = Color.Transparent
+        Dashboard_InfoBox_trainers.BackgroundImage = CType(resources.GetObject("Dashboard_InfoBox_trainers.BackgroundImage"), Image)
+        Dashboard_InfoBox_trainers.BackgroundImageLayout = ImageLayout.Stretch
         Dashboard_InfoBox_trainers.Controls.Add(Dashboard_InfoLbl_trainers)
         Dashboard_InfoBox_trainers.Controls.Add(Dashboard_InfoBox2_trainers)
         Dashboard_InfoBox_trainers.Location = New Point(448, 146)
@@ -502,7 +501,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox2_trainers
         ' 
-        Dashboard_InfoBox2_trainers.BackColor = Color.Cornsilk
+        Dashboard_InfoBox2_trainers.BackColor = Color.Transparent
         Dashboard_InfoBox2_trainers.Controls.Add(Dashboard_InfoLbl2_trainers)
         Dashboard_InfoBox2_trainers.Location = New Point(5, 7)
         Dashboard_InfoBox2_trainers.Name = "Dashboard_InfoBox2_trainers"
@@ -514,7 +513,7 @@ Partial Class Dashboard
         Dashboard_InfoLbl2_trainers.AutoSize = True
         Dashboard_InfoLbl2_trainers.BackColor = Color.Transparent
         Dashboard_InfoLbl2_trainers.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Dashboard_InfoLbl2_trainers.ForeColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        Dashboard_InfoLbl2_trainers.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         Dashboard_InfoLbl2_trainers.Location = New Point(126, 21)
         Dashboard_InfoLbl2_trainers.Name = "Dashboard_InfoLbl2_trainers"
         Dashboard_InfoLbl2_trainers.Size = New Size(56, 45)
@@ -523,7 +522,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard_Panel
         ' 
-        Dashboard_Panel.BackColor = Color.FromArgb(CByte(249), CByte(255), CByte(238))
+        Dashboard_Panel.BackColor = Color.FromArgb(CByte(225), CByte(209), CByte(252))
         Dashboard_Panel.Controls.Add(Header_Underline)
         Dashboard_Panel.Controls.Add(DHeadLbl_Title)
         Dashboard_Panel.Controls.Add(DHeadIcon_Title)
@@ -540,7 +539,9 @@ Partial Class Dashboard
         ' 
         ' Dashboard_InfoBox_learners
         ' 
-        Dashboard_InfoBox_learners.BackColor = Color.Gold
+        Dashboard_InfoBox_learners.BackColor = Color.Transparent
+        Dashboard_InfoBox_learners.BackgroundImage = CType(resources.GetObject("Dashboard_InfoBox_learners.BackgroundImage"), Image)
+        Dashboard_InfoBox_learners.BackgroundImageLayout = ImageLayout.Stretch
         Dashboard_InfoBox_learners.Controls.Add(Dashboard_InfoLbl_learners)
         Dashboard_InfoBox_learners.Controls.Add(Dashboard_InfoBox2_learners)
         Dashboard_InfoBox_learners.Location = New Point(55, 146)
@@ -552,9 +553,9 @@ Partial Class Dashboard
         ' 
         DMenuIcon_BookLessons.BackColor = Color.Transparent
         DMenuIcon_BookLessons.Image = CType(resources.GetObject("DMenuIcon_BookLessons.Image"), Image)
-        DMenuIcon_BookLessons.Location = New Point(915, 734)
+        DMenuIcon_BookLessons.Location = New Point(911, 734)
         DMenuIcon_BookLessons.Name = "DMenuIcon_BookLessons"
-        DMenuIcon_BookLessons.Size = New Size(32, 32)
+        DMenuIcon_BookLessons.Size = New Size(40, 40)
         DMenuIcon_BookLessons.SizeMode = PictureBoxSizeMode.StretchImage
         DMenuIcon_BookLessons.TabIndex = 27
         DMenuIcon_BookLessons.TabStop = False
@@ -564,20 +565,33 @@ Partial Class Dashboard
         DMiniBtn_Icon.BackColor = Color.Transparent
         DMiniBtn_Icon.Image = CType(resources.GetObject("DMiniBtn_Icon.Image"), Image)
         DMiniBtn_Icon.InitialImage = Nothing
-        DMiniBtn_Icon.Location = New Point(1166, 6)
+        DMiniBtn_Icon.Location = New Point(1178, 18)
         DMiniBtn_Icon.Name = "DMiniBtn_Icon"
-        DMiniBtn_Icon.Size = New Size(36, 29)
+        DMiniBtn_Icon.Size = New Size(20, 8)
         DMiniBtn_Icon.SizeMode = PictureBoxSizeMode.StretchImage
         DMiniBtn_Icon.TabIndex = 30
         DMiniBtn_Icon.TabStop = False
+        ' 
+        ' D_Logout_Lbl
+        ' 
+        D_Logout_Lbl.AutoSize = True
+        D_Logout_Lbl.BackColor = Color.Transparent
+        D_Logout_Lbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        D_Logout_Lbl.ForeColor = Color.White
+        D_Logout_Lbl.Location = New Point(41, 765)
+        D_Logout_Lbl.Name = "D_Logout_Lbl"
+        D_Logout_Lbl.Size = New Size(57, 20)
+        D_Logout_Lbl.TabIndex = 31
+        D_Logout_Lbl.Text = "Logout"
         ' 
         ' Dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Gold
+        BackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1240, 800)
+        Controls.Add(D_Logout_Lbl)
         Controls.Add(DMiniBtn_Icon)
         Controls.Add(DMenuIcon_Logout)
         Controls.Add(DMenuName_BookLessons)
@@ -589,7 +603,6 @@ Partial Class Dashboard
         Controls.Add(DMenuIcon_Dashboard)
         Controls.Add(DCloseBtn_Icon)
         Controls.Add(AppLogoTitle)
-        Controls.Add(AppLogo)
         Controls.Add(DMenuIcon_Courses)
         Controls.Add(DMenuIcon_Learners)
         Controls.Add(Dashboard_Panel)
@@ -623,7 +636,6 @@ Partial Class Dashboard
         CType(DMenuIcon_Dashboard, ComponentModel.ISupportInitialize).EndInit()
         CType(DCloseBtn_Icon, ComponentModel.ISupportInitialize).EndInit()
         CType(AppLogoTitle, ComponentModel.ISupportInitialize).EndInit()
-        CType(AppLogo, ComponentModel.ISupportInitialize).EndInit()
         CType(DMenuIcon_Courses, ComponentModel.ISupportInitialize).EndInit()
         CType(DMenuIcon_Learners, ComponentModel.ISupportInitialize).EndInit()
         Dashboard_InfoBox_trainers.ResumeLayout(False)
@@ -671,7 +683,6 @@ Partial Class Dashboard
     Friend WithEvents DHeadLbl_Title As Label
     Friend WithEvents DCloseBtn_Icon As PictureBox
     Friend WithEvents AppLogoTitle As PictureBox
-    Friend WithEvents AppLogo As PictureBox
     Friend WithEvents Header_Underline As Panel
     Friend WithEvents DMenuIcon_Courses As PictureBox
     Friend WithEvents DMenuIcon_Learners As PictureBox
@@ -683,4 +694,5 @@ Partial Class Dashboard
     Friend WithEvents Dashboard_InfoBox_learners As Panel
     Friend WithEvents DMenuIcon_BookLessons As PictureBox
     Friend WithEvents DMiniBtn_Icon As PictureBox
+    Friend WithEvents D_Logout_Lbl As Label
 End Class

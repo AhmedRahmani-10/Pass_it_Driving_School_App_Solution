@@ -23,30 +23,23 @@ Partial Class Learners
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Learners))
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         LMenuIcon_Trainers = New PictureBox()
         LMenuLbl_Learners = New Label()
         LMenuLbl_Dashboard = New Label()
         LMenuIcon_Dashboard = New PictureBox()
         THeadLbl_Title = New Label()
         LCloseBtn_Icon = New PictureBox()
-        AppLogoTitle = New PictureBox()
         THeadULine_Title = New Panel()
         LMenuIcon_Courses = New PictureBox()
         LMenuIcon_Learners = New PictureBox()
         AppLogo = New PictureBox()
         L_Dashboard_Panel = New Panel()
-        L_ReBtn = New PictureBox()
         LearnersDGV_Title = New Label()
         LearnersDGV = New DataGridView()
-        Learners_ID = New DataGridViewTextBoxColumn()
-        Learners_Fname = New DataGridViewTextBoxColumn()
-        Learners_Lname = New DataGridViewTextBoxColumn()
-        Learners_DOB = New DataGridViewTextBoxColumn()
-        Learners_Gender = New DataGridViewTextBoxColumn()
-        Learners_Email = New DataGridViewTextBoxColumn()
-        Learners_Phone = New DataGridViewTextBoxColumn()
-        Learners_Course = New DataGridViewTextBoxColumn()
         LForm_TopPanel = New Panel()
+        LForm_Btn_Delete = New Button()
         LForm_Btn_Update = New Button()
         LForm_Btn_Add = New Button()
         LForm_Panel_Phone = New Panel()
@@ -101,15 +94,23 @@ Partial Class Learners
         LMenuLbl_Courses = New Label()
         LMenuLbl_Trainers = New Label()
         LMini_Btn = New PictureBox()
+        TLogout_btnLbl = New Label()
+        TCloseBtn_Icon = New PictureBox()
+        Learners_ID = New DataGridViewTextBoxColumn()
+        Learners_Fname = New DataGridViewTextBoxColumn()
+        Learners_Lname = New DataGridViewTextBoxColumn()
+        Learners_DOB = New DataGridViewTextBoxColumn()
+        Learners_Gender = New DataGridViewTextBoxColumn()
+        Learners_Email = New DataGridViewTextBoxColumn()
+        Learners_Phone = New DataGridViewTextBoxColumn()
+        Learners_Course = New DataGridViewTextBoxColumn()
         CType(LMenuIcon_Trainers, ComponentModel.ISupportInitialize).BeginInit()
         CType(LMenuIcon_Dashboard, ComponentModel.ISupportInitialize).BeginInit()
         CType(LCloseBtn_Icon, ComponentModel.ISupportInitialize).BeginInit()
-        CType(AppLogoTitle, ComponentModel.ISupportInitialize).BeginInit()
         CType(LMenuIcon_Courses, ComponentModel.ISupportInitialize).BeginInit()
         CType(LMenuIcon_Learners, ComponentModel.ISupportInitialize).BeginInit()
         CType(AppLogo, ComponentModel.ISupportInitialize).BeginInit()
         L_Dashboard_Panel.SuspendLayout()
-        CType(L_ReBtn, ComponentModel.ISupportInitialize).BeginInit()
         CType(LearnersDGV, ComponentModel.ISupportInitialize).BeginInit()
         LForm_TopPanel.SuspendLayout()
         LForm_Panel_Phone.SuspendLayout()
@@ -131,15 +132,16 @@ Partial Class Learners
         CType(LMenuIcon_BookLessons, ComponentModel.ISupportInitialize).BeginInit()
         CType(LMenuIcon_Logout, ComponentModel.ISupportInitialize).BeginInit()
         CType(LMini_Btn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(TCloseBtn_Icon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' LMenuIcon_Trainers
         ' 
         LMenuIcon_Trainers.BackColor = Color.Transparent
         LMenuIcon_Trainers.Image = CType(resources.GetObject("LMenuIcon_Trainers.Image"), Image)
-        LMenuIcon_Trainers.Location = New Point(605, 734)
+        LMenuIcon_Trainers.Location = New Point(599, 732)
         LMenuIcon_Trainers.Name = "LMenuIcon_Trainers"
-        LMenuIcon_Trainers.Size = New Size(32, 32)
+        LMenuIcon_Trainers.Size = New Size(40, 40)
         LMenuIcon_Trainers.SizeMode = PictureBoxSizeMode.StretchImage
         LMenuIcon_Trainers.TabIndex = 38
         LMenuIcon_Trainers.TabStop = False
@@ -149,8 +151,8 @@ Partial Class Learners
         LMenuLbl_Learners.AutoSize = True
         LMenuLbl_Learners.BackColor = Color.Transparent
         LMenuLbl_Learners.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LMenuLbl_Learners.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        LMenuLbl_Learners.Location = New Point(429, 771)
+        LMenuLbl_Learners.ForeColor = Color.White
+        LMenuLbl_Learners.Location = New Point(428, 771)
         LMenuLbl_Learners.Name = "LMenuLbl_Learners"
         LMenuLbl_Learners.Size = New Size(74, 21)
         LMenuLbl_Learners.TabIndex = 37
@@ -161,7 +163,7 @@ Partial Class Learners
         LMenuLbl_Dashboard.AutoSize = True
         LMenuLbl_Dashboard.BackColor = Color.Transparent
         LMenuLbl_Dashboard.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LMenuLbl_Dashboard.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        LMenuLbl_Dashboard.ForeColor = Color.White
         LMenuLbl_Dashboard.Location = New Point(265, 771)
         LMenuLbl_Dashboard.Name = "LMenuLbl_Dashboard"
         LMenuLbl_Dashboard.Size = New Size(93, 21)
@@ -172,9 +174,9 @@ Partial Class Learners
         ' 
         LMenuIcon_Dashboard.BackColor = Color.Transparent
         LMenuIcon_Dashboard.Image = CType(resources.GetObject("LMenuIcon_Dashboard.Image"), Image)
-        LMenuIcon_Dashboard.Location = New Point(295, 734)
+        LMenuIcon_Dashboard.Location = New Point(291, 734)
         LMenuIcon_Dashboard.Name = "LMenuIcon_Dashboard"
-        LMenuIcon_Dashboard.Size = New Size(32, 32)
+        LMenuIcon_Dashboard.Size = New Size(40, 40)
         LMenuIcon_Dashboard.SizeMode = PictureBoxSizeMode.StretchImage
         LMenuIcon_Dashboard.TabIndex = 34
         LMenuIcon_Dashboard.TabStop = False
@@ -183,11 +185,11 @@ Partial Class Learners
         ' 
         THeadLbl_Title.AutoSize = True
         THeadLbl_Title.BackColor = Color.Transparent
-        THeadLbl_Title.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        THeadLbl_Title.ForeColor = Color.FromArgb(CByte(72), CByte(113), CByte(239))
-        THeadLbl_Title.Location = New Point(68, 17)
+        THeadLbl_Title.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        THeadLbl_Title.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
+        THeadLbl_Title.Location = New Point(68, 22)
         THeadLbl_Title.Name = "THeadLbl_Title"
-        THeadLbl_Title.Size = New Size(180, 30)
+        THeadLbl_Title.Size = New Size(210, 32)
         THeadLbl_Title.TabIndex = 20
         THeadLbl_Title.Text = "Manage Learners"
         ' 
@@ -195,27 +197,16 @@ Partial Class Learners
         ' 
         LCloseBtn_Icon.BackColor = Color.Transparent
         LCloseBtn_Icon.Image = CType(resources.GetObject("LCloseBtn_Icon.Image"), Image)
-        LCloseBtn_Icon.Location = New Point(1214, 9)
+        LCloseBtn_Icon.Location = New Point(0, 0)
         LCloseBtn_Icon.Name = "LCloseBtn_Icon"
         LCloseBtn_Icon.Size = New Size(16, 16)
         LCloseBtn_Icon.SizeMode = PictureBoxSizeMode.StretchImage
         LCloseBtn_Icon.TabIndex = 33
         LCloseBtn_Icon.TabStop = False
         ' 
-        ' AppLogoTitle
-        ' 
-        AppLogoTitle.BackColor = Color.Transparent
-        AppLogoTitle.Image = CType(resources.GetObject("AppLogoTitle.Image"), Image)
-        AppLogoTitle.Location = New Point(395, 20)
-        AppLogoTitle.Name = "AppLogoTitle"
-        AppLogoTitle.Size = New Size(444, 36)
-        AppLogoTitle.SizeMode = PictureBoxSizeMode.StretchImage
-        AppLogoTitle.TabIndex = 32
-        AppLogoTitle.TabStop = False
-        ' 
         ' THeadULine_Title
         ' 
-        THeadULine_Title.BackColor = Color.Gold
+        THeadULine_Title.BackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         THeadULine_Title.Location = New Point(10, 55)
         THeadULine_Title.Name = "THeadULine_Title"
         THeadULine_Title.Size = New Size(1200, 2)
@@ -225,9 +216,9 @@ Partial Class Learners
         ' 
         LMenuIcon_Courses.BackColor = Color.Transparent
         LMenuIcon_Courses.Image = CType(resources.GetObject("LMenuIcon_Courses.Image"), Image)
-        LMenuIcon_Courses.Location = New Point(760, 734)
+        LMenuIcon_Courses.Location = New Point(753, 728)
         LMenuIcon_Courses.Name = "LMenuIcon_Courses"
-        LMenuIcon_Courses.Size = New Size(32, 32)
+        LMenuIcon_Courses.Size = New Size(44, 44)
         LMenuIcon_Courses.SizeMode = PictureBoxSizeMode.StretchImage
         LMenuIcon_Courses.TabIndex = 40
         LMenuIcon_Courses.TabStop = False
@@ -236,9 +227,9 @@ Partial Class Learners
         ' 
         LMenuIcon_Learners.BackColor = Color.Transparent
         LMenuIcon_Learners.Image = CType(resources.GetObject("LMenuIcon_Learners.Image"), Image)
-        LMenuIcon_Learners.Location = New Point(450, 734)
+        LMenuIcon_Learners.Location = New Point(445, 732)
         LMenuIcon_Learners.Name = "LMenuIcon_Learners"
-        LMenuIcon_Learners.Size = New Size(32, 32)
+        LMenuIcon_Learners.Size = New Size(40, 40)
         LMenuIcon_Learners.SizeMode = PictureBoxSizeMode.StretchImage
         LMenuIcon_Learners.TabIndex = 36
         LMenuIcon_Learners.TabStop = False
@@ -247,17 +238,16 @@ Partial Class Learners
         ' 
         AppLogo.BackColor = Color.Transparent
         AppLogo.Image = CType(resources.GetObject("AppLogo.Image"), Image)
-        AppLogo.Location = New Point(10, 9)
+        AppLogo.Location = New Point(11, 10)
         AppLogo.Name = "AppLogo"
-        AppLogo.Size = New Size(167, 47)
+        AppLogo.Size = New Size(297, 50)
         AppLogo.SizeMode = PictureBoxSizeMode.StretchImage
         AppLogo.TabIndex = 31
         AppLogo.TabStop = False
         ' 
         ' L_Dashboard_Panel
         ' 
-        L_Dashboard_Panel.BackColor = Color.FromArgb(CByte(249), CByte(255), CByte(238))
-        L_Dashboard_Panel.Controls.Add(L_ReBtn)
+        L_Dashboard_Panel.BackColor = Color.FromArgb(CByte(225), CByte(209), CByte(252))
         L_Dashboard_Panel.Controls.Add(LearnersDGV_Title)
         L_Dashboard_Panel.Controls.Add(LearnersDGV)
         L_Dashboard_Panel.Controls.Add(LForm_TopPanel)
@@ -269,82 +259,50 @@ Partial Class Learners
         L_Dashboard_Panel.Size = New Size(1220, 662)
         L_Dashboard_Panel.TabIndex = 30
         ' 
-        ' L_ReBtn
-        ' 
-        L_ReBtn.BackColor = Color.Transparent
-        L_ReBtn.Image = CType(resources.GetObject("L_ReBtn.Image"), Image)
-        L_ReBtn.Location = New Point(1186, 15)
-        L_ReBtn.Name = "L_ReBtn"
-        L_ReBtn.Size = New Size(20, 20)
-        L_ReBtn.SizeMode = PictureBoxSizeMode.StretchImage
-        L_ReBtn.TabIndex = 25
-        L_ReBtn.TabStop = False
-        ' 
         ' LearnersDGV_Title
         ' 
         LearnersDGV_Title.AutoSize = True
         LearnersDGV_Title.BackColor = Color.Transparent
-        LearnersDGV_Title.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
-        LearnersDGV_Title.ForeColor = Color.FromArgb(CByte(72), CByte(113), CByte(232))
+        LearnersDGV_Title.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LearnersDGV_Title.ForeColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         LearnersDGV_Title.Location = New Point(529, 389)
         LearnersDGV_Title.Name = "LearnersDGV_Title"
-        LearnersDGV_Title.Size = New Size(163, 21)
+        LearnersDGV_Title.Size = New Size(147, 20)
         LearnersDGV_Title.TabIndex = 24
         LearnersDGV_Title.Text = "All Learners Records"
         ' 
         ' LearnersDGV
         ' 
         LearnersDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        LearnersDGV.BackgroundColor = SystemColors.ControlLight
+        LearnersDGV.BackgroundColor = Color.GhostWhite
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
+        DataGridViewCellStyle3.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.Padding = New Padding(5)
+        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        LearnersDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         LearnersDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         LearnersDGV.Columns.AddRange(New DataGridViewColumn() {Learners_ID, Learners_Fname, Learners_Lname, Learners_DOB, Learners_Gender, Learners_Email, Learners_Phone, Learners_Course})
         LearnersDGV.Location = New Point(14, 416)
         LearnersDGV.Name = "LearnersDGV"
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Control
+        DataGridViewCellStyle4.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle4.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle4.Padding = New Padding(5)
+        DataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
+        LearnersDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         LearnersDGV.Size = New Size(1192, 231)
         LearnersDGV.TabIndex = 23
         ' 
-        ' Learners_ID
-        ' 
-        Learners_ID.HeaderText = "Learners ID"
-        Learners_ID.Name = "Learners_ID"
-        ' 
-        ' Learners_Fname
-        ' 
-        Learners_Fname.HeaderText = "First Name"
-        Learners_Fname.Name = "Learners_Fname"
-        ' 
-        ' Learners_Lname
-        ' 
-        Learners_Lname.HeaderText = "Last Name"
-        Learners_Lname.Name = "Learners_Lname"
-        ' 
-        ' Learners_DOB
-        ' 
-        Learners_DOB.HeaderText = "D. O. B."
-        Learners_DOB.Name = "Learners_DOB"
-        ' 
-        ' Learners_Gender
-        ' 
-        Learners_Gender.HeaderText = "Gender"
-        Learners_Gender.Name = "Learners_Gender"
-        ' 
-        ' Learners_Email
-        ' 
-        Learners_Email.HeaderText = "Email ID"
-        Learners_Email.Name = "Learners_Email"
-        ' 
-        ' Learners_Phone
-        ' 
-        Learners_Phone.HeaderText = "Phone No"
-        Learners_Phone.Name = "Learners_Phone"
-        ' 
-        ' Learners_Course
-        ' 
-        Learners_Course.HeaderText = "Course Enrolled"
-        Learners_Course.Name = "Learners_Course"
-        ' 
         ' LForm_TopPanel
         ' 
+        LForm_TopPanel.Controls.Add(LForm_Btn_Delete)
         LForm_TopPanel.Controls.Add(LForm_Btn_Update)
         LForm_TopPanel.Controls.Add(LForm_Btn_Add)
         LForm_TopPanel.Controls.Add(LForm_Panel_Phone)
@@ -360,13 +318,26 @@ Partial Class Learners
         LForm_TopPanel.Size = New Size(1192, 232)
         LForm_TopPanel.TabIndex = 22
         ' 
+        ' LForm_Btn_Delete
+        ' 
+        LForm_Btn_Delete.BackColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
+        LForm_Btn_Delete.FlatStyle = FlatStyle.Flat
+        LForm_Btn_Delete.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        LForm_Btn_Delete.ForeColor = Color.White
+        LForm_Btn_Delete.Location = New Point(1041, 164)
+        LForm_Btn_Delete.Name = "LForm_Btn_Delete"
+        LForm_Btn_Delete.Size = New Size(92, 32)
+        LForm_Btn_Delete.TabIndex = 11
+        LForm_Btn_Delete.Text = "Delete"
+        LForm_Btn_Delete.UseVisualStyleBackColor = False
+        ' 
         ' LForm_Btn_Update
         ' 
-        LForm_Btn_Update.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        LForm_Btn_Update.BackColor = Color.Green
         LForm_Btn_Update.FlatStyle = FlatStyle.Flat
         LForm_Btn_Update.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         LForm_Btn_Update.ForeColor = Color.White
-        LForm_Btn_Update.Location = New Point(1039, 143)
+        LForm_Btn_Update.Location = New Point(940, 164)
         LForm_Btn_Update.Name = "LForm_Btn_Update"
         LForm_Btn_Update.Size = New Size(95, 32)
         LForm_Btn_Update.TabIndex = 10
@@ -375,13 +346,13 @@ Partial Class Learners
         ' 
         ' LForm_Btn_Add
         ' 
-        LForm_Btn_Add.BackColor = Color.FromArgb(CByte(75), CByte(113), CByte(232))
+        LForm_Btn_Add.BackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         LForm_Btn_Add.FlatStyle = FlatStyle.Flat
         LForm_Btn_Add.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         LForm_Btn_Add.ForeColor = Color.White
-        LForm_Btn_Add.Location = New Point(933, 143)
+        LForm_Btn_Add.Location = New Point(851, 164)
         LForm_Btn_Add.Name = "LForm_Btn_Add"
-        LForm_Btn_Add.Size = New Size(95, 32)
+        LForm_Btn_Add.Size = New Size(83, 32)
         LForm_Btn_Add.TabIndex = 9
         LForm_Btn_Add.Text = "Add"
         LForm_Btn_Add.UseVisualStyleBackColor = False
@@ -393,7 +364,7 @@ Partial Class Learners
         LForm_Panel_Phone.Controls.Add(LForm_ErrMsg_Phone)
         LForm_Panel_Phone.Controls.Add(LForm_Star_Phone)
         LForm_Panel_Phone.Controls.Add(LForm_Lbl_Phone)
-        LForm_Panel_Phone.Location = New Point(814, 78)
+        LForm_Panel_Phone.Location = New Point(812, 78)
         LForm_Panel_Phone.Name = "LForm_Panel_Phone"
         LForm_Panel_Phone.Size = New Size(358, 56)
         LForm_Panel_Phone.TabIndex = 8
@@ -412,10 +383,10 @@ Partial Class Learners
         ' 
         ' LForm_TBox_Phone
         ' 
-        LForm_TBox_Phone.Font = New Font("Segoe UI", 10F)
-        LForm_TBox_Phone.Location = New Point(120, 3)
+        LForm_TBox_Phone.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_TBox_Phone.Location = New Point(144, 3)
         LForm_TBox_Phone.Name = "LForm_TBox_Phone"
-        LForm_TBox_Phone.Size = New Size(200, 25)
+        LForm_TBox_Phone.Size = New Size(175, 23)
         LForm_TBox_Phone.TabIndex = 3
         ' 
         ' LForm_ErrMsg_Phone
@@ -423,7 +394,7 @@ Partial Class Learners
         LForm_ErrMsg_Phone.AutoSize = True
         LForm_ErrMsg_Phone.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LForm_ErrMsg_Phone.ForeColor = Color.Red
-        LForm_ErrMsg_Phone.Location = New Point(120, 31)
+        LForm_ErrMsg_Phone.Location = New Point(144, 31)
         LForm_ErrMsg_Phone.Name = "LForm_ErrMsg_Phone"
         LForm_ErrMsg_Phone.Size = New Size(164, 17)
         LForm_ErrMsg_Phone.TabIndex = 2
@@ -435,7 +406,7 @@ Partial Class Learners
         LForm_Star_Phone.AutoSize = True
         LForm_Star_Phone.Font = New Font("Segoe UI", 14F)
         LForm_Star_Phone.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        LForm_Star_Phone.Location = New Point(96, 3)
+        LForm_Star_Phone.Location = New Point(123, 3)
         LForm_Star_Phone.Name = "LForm_Star_Phone"
         LForm_Star_Phone.Size = New Size(20, 25)
         LForm_Star_Phone.TabIndex = 1
@@ -444,12 +415,12 @@ Partial Class Learners
         ' LForm_Lbl_Phone
         ' 
         LForm_Lbl_Phone.AutoSize = True
-        LForm_Lbl_Phone.Font = New Font("Segoe UI", 10F)
-        LForm_Lbl_Phone.Location = New Point(22, 6)
+        LForm_Lbl_Phone.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_Lbl_Phone.Location = New Point(36, 6)
         LForm_Lbl_Phone.Name = "LForm_Lbl_Phone"
-        LForm_Lbl_Phone.Size = New Size(84, 19)
+        LForm_Lbl_Phone.Size = New Size(88, 17)
         LForm_Lbl_Phone.TabIndex = 0
-        LForm_Lbl_Phone.Text = "Phone No. : "
+        LForm_Lbl_Phone.Text = "Phone No.:"
         ' 
         ' LForm_Panel_Course
         ' 
@@ -458,7 +429,7 @@ Partial Class Learners
         LForm_Panel_Course.Controls.Add(LForm_ErrMsg_Course)
         LForm_Panel_Course.Controls.Add(LForm_Star_Course)
         LForm_Panel_Course.Controls.Add(LForm_Lbl_Course)
-        LForm_Panel_Course.Location = New Point(416, 140)
+        LForm_Panel_Course.Location = New Point(421, 140)
         LForm_Panel_Course.Name = "LForm_Panel_Course"
         LForm_Panel_Course.Size = New Size(358, 56)
         LForm_Panel_Course.TabIndex = 7
@@ -467,12 +438,12 @@ Partial Class Learners
         ' 
         LForm_CBox_Course.BackColor = SystemColors.MenuBar
         LForm_CBox_Course.FlatStyle = FlatStyle.Flat
-        LForm_CBox_Course.Font = New Font("Segoe UI", 10F)
+        LForm_CBox_Course.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
         LForm_CBox_Course.FormattingEnabled = True
         LForm_CBox_Course.Items.AddRange(New Object() {"Basic", "Refresher", "Pass Plus"})
-        LForm_CBox_Course.Location = New Point(120, 3)
+        LForm_CBox_Course.Location = New Point(144, 3)
         LForm_CBox_Course.Name = "LForm_CBox_Course"
-        LForm_CBox_Course.Size = New Size(200, 25)
+        LForm_CBox_Course.Size = New Size(175, 25)
         LForm_CBox_Course.TabIndex = 6
         ' 
         ' LForm_ChkMark_Course
@@ -492,7 +463,7 @@ Partial Class Learners
         LForm_ErrMsg_Course.AutoSize = True
         LForm_ErrMsg_Course.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LForm_ErrMsg_Course.ForeColor = Color.Red
-        LForm_ErrMsg_Course.Location = New Point(120, 31)
+        LForm_ErrMsg_Course.Location = New Point(144, 31)
         LForm_ErrMsg_Course.Name = "LForm_ErrMsg_Course"
         LForm_ErrMsg_Course.Size = New Size(182, 17)
         LForm_ErrMsg_Course.TabIndex = 2
@@ -504,7 +475,7 @@ Partial Class Learners
         LForm_Star_Course.AutoSize = True
         LForm_Star_Course.Font = New Font("Segoe UI", 14F)
         LForm_Star_Course.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        LForm_Star_Course.Location = New Point(96, 3)
+        LForm_Star_Course.Location = New Point(122, 3)
         LForm_Star_Course.Name = "LForm_Star_Course"
         LForm_Star_Course.Size = New Size(20, 25)
         LForm_Star_Course.TabIndex = 1
@@ -513,12 +484,12 @@ Partial Class Learners
         ' LForm_Lbl_Course
         ' 
         LForm_Lbl_Course.AutoSize = True
-        LForm_Lbl_Course.Font = New Font("Segoe UI", 10F)
-        LForm_Lbl_Course.Location = New Point(43, 6)
+        LForm_Lbl_Course.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_Lbl_Course.Location = New Point(57, 6)
         LForm_Lbl_Course.Name = "LForm_Lbl_Course"
-        LForm_Lbl_Course.Size = New Size(63, 19)
+        LForm_Lbl_Course.Size = New Size(64, 17)
         LForm_Lbl_Course.TabIndex = 0
-        LForm_Lbl_Course.Text = "Course : "
+        LForm_Lbl_Course.Text = "Course:"
         ' 
         ' LForm_Panel_Lname
         ' 
@@ -527,7 +498,7 @@ Partial Class Learners
         LForm_Panel_Lname.Controls.Add(LForm_ErrMsg_Lname)
         LForm_Panel_Lname.Controls.Add(LForm_Star_Lname)
         LForm_Panel_Lname.Controls.Add(LForm_Lbl_Lname)
-        LForm_Panel_Lname.Location = New Point(813, 16)
+        LForm_Panel_Lname.Location = New Point(812, 16)
         LForm_Panel_Lname.Name = "LForm_Panel_Lname"
         LForm_Panel_Lname.Size = New Size(358, 56)
         LForm_Panel_Lname.TabIndex = 5
@@ -546,10 +517,10 @@ Partial Class Learners
         ' 
         ' LForm_TBox_Lname
         ' 
-        LForm_TBox_Lname.Font = New Font("Segoe UI", 10F)
-        LForm_TBox_Lname.Location = New Point(120, 3)
+        LForm_TBox_Lname.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_TBox_Lname.Location = New Point(144, 3)
         LForm_TBox_Lname.Name = "LForm_TBox_Lname"
-        LForm_TBox_Lname.Size = New Size(200, 25)
+        LForm_TBox_Lname.Size = New Size(175, 23)
         LForm_TBox_Lname.TabIndex = 3
         ' 
         ' LForm_ErrMsg_Lname
@@ -557,7 +528,7 @@ Partial Class Learners
         LForm_ErrMsg_Lname.AutoSize = True
         LForm_ErrMsg_Lname.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LForm_ErrMsg_Lname.ForeColor = Color.Red
-        LForm_ErrMsg_Lname.Location = New Point(120, 31)
+        LForm_ErrMsg_Lname.Location = New Point(144, 31)
         LForm_ErrMsg_Lname.Name = "LForm_ErrMsg_Lname"
         LForm_ErrMsg_Lname.Size = New Size(138, 17)
         LForm_ErrMsg_Lname.TabIndex = 2
@@ -569,7 +540,7 @@ Partial Class Learners
         LForm_Star_Lname.AutoSize = True
         LForm_Star_Lname.Font = New Font("Segoe UI", 14F)
         LForm_Star_Lname.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        LForm_Star_Lname.Location = New Point(96, 3)
+        LForm_Star_Lname.Location = New Point(123, 3)
         LForm_Star_Lname.Name = "LForm_Star_Lname"
         LForm_Star_Lname.Size = New Size(20, 25)
         LForm_Star_Lname.TabIndex = 1
@@ -578,12 +549,12 @@ Partial Class Learners
         ' LForm_Lbl_Lname
         ' 
         LForm_Lbl_Lname.AutoSize = True
-        LForm_Lbl_Lname.Font = New Font("Segoe UI", 10F)
-        LForm_Lbl_Lname.Location = New Point(21, 6)
+        LForm_Lbl_Lname.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_Lbl_Lname.Location = New Point(36, 6)
         LForm_Lbl_Lname.Name = "LForm_Lbl_Lname"
-        LForm_Lbl_Lname.Size = New Size(85, 19)
+        LForm_Lbl_Lname.Size = New Size(88, 17)
         LForm_Lbl_Lname.TabIndex = 0
-        LForm_Lbl_Lname.Text = "Last Name : "
+        LForm_Lbl_Lname.Text = "Last Name:"
         ' 
         ' LForm_Panel_Gender
         ' 
@@ -591,7 +562,7 @@ Partial Class Learners
         LForm_Panel_Gender.Controls.Add(LForm_Lbl_Gender)
         LForm_Panel_Gender.Location = New Point(18, 78)
         LForm_Panel_Gender.Name = "LForm_Panel_Gender"
-        LForm_Panel_Gender.Size = New Size(358, 56)
+        LForm_Panel_Gender.Size = New Size(370, 56)
         LForm_Panel_Gender.TabIndex = 6
         ' 
         ' LForm_CBox_Gender
@@ -600,24 +571,24 @@ Partial Class Learners
         LForm_CBox_Gender.BackColor = SystemColors.Menu
         LForm_CBox_Gender.DropDownStyle = ComboBoxStyle.DropDownList
         LForm_CBox_Gender.FlatStyle = FlatStyle.Flat
-        LForm_CBox_Gender.Font = New Font("Segoe UI", 10F)
+        LForm_CBox_Gender.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
         LForm_CBox_Gender.FormattingEnabled = True
         LForm_CBox_Gender.Items.AddRange(New Object() {"Female", "Male", "Prefer no to say"})
-        LForm_CBox_Gender.Location = New Point(120, 3)
+        LForm_CBox_Gender.Location = New Point(157, 3)
         LForm_CBox_Gender.Name = "LForm_CBox_Gender"
-        LForm_CBox_Gender.Size = New Size(200, 25)
+        LForm_CBox_Gender.Size = New Size(175, 25)
         LForm_CBox_Gender.Sorted = True
         LForm_CBox_Gender.TabIndex = 5
         ' 
         ' LForm_Lbl_Gender
         ' 
         LForm_Lbl_Gender.AutoSize = True
-        LForm_Lbl_Gender.Font = New Font("Segoe UI", 10F)
-        LForm_Lbl_Gender.Location = New Point(41, 6)
+        LForm_Lbl_Gender.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_Lbl_Gender.Location = New Point(73, 6)
         LForm_Lbl_Gender.Name = "LForm_Lbl_Gender"
-        LForm_Lbl_Gender.Size = New Size(65, 19)
+        LForm_Lbl_Gender.Size = New Size(64, 17)
         LForm_Lbl_Gender.TabIndex = 0
-        LForm_Lbl_Gender.Text = "Gender : "
+        LForm_Lbl_Gender.Text = "Gender:"
         ' 
         ' LForm_Panel_Email
         ' 
@@ -626,17 +597,17 @@ Partial Class Learners
         LForm_Panel_Email.Controls.Add(LForm_ErrMsg_Email)
         LForm_Panel_Email.Controls.Add(LForm_Star_Email)
         LForm_Panel_Email.Controls.Add(LForm_Lbl_Email)
-        LForm_Panel_Email.Location = New Point(416, 78)
+        LForm_Panel_Email.Location = New Point(421, 78)
         LForm_Panel_Email.Name = "LForm_Panel_Email"
         LForm_Panel_Email.Size = New Size(358, 56)
         LForm_Panel_Email.TabIndex = 7
         ' 
         ' LForm_TBox_Email
         ' 
-        LForm_TBox_Email.Font = New Font("Segoe UI", 10F)
-        LForm_TBox_Email.Location = New Point(120, 3)
+        LForm_TBox_Email.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_TBox_Email.Location = New Point(144, 3)
         LForm_TBox_Email.Name = "LForm_TBox_Email"
-        LForm_TBox_Email.Size = New Size(200, 25)
+        LForm_TBox_Email.Size = New Size(175, 23)
         LForm_TBox_Email.TabIndex = 5
         ' 
         ' LForm_ChkMark_Email
@@ -656,7 +627,7 @@ Partial Class Learners
         LForm_ErrMsg_Email.AutoSize = True
         LForm_ErrMsg_Email.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LForm_ErrMsg_Email.ForeColor = Color.Red
-        LForm_ErrMsg_Email.Location = New Point(120, 31)
+        LForm_ErrMsg_Email.Location = New Point(144, 31)
         LForm_ErrMsg_Email.Name = "LForm_ErrMsg_Email"
         LForm_ErrMsg_Email.Size = New Size(123, 17)
         LForm_ErrMsg_Email.TabIndex = 2
@@ -668,7 +639,7 @@ Partial Class Learners
         LForm_Star_Email.AutoSize = True
         LForm_Star_Email.Font = New Font("Segoe UI", 14F)
         LForm_Star_Email.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        LForm_Star_Email.Location = New Point(96, 3)
+        LForm_Star_Email.Location = New Point(122, 3)
         LForm_Star_Email.Name = "LForm_Star_Email"
         LForm_Star_Email.Size = New Size(20, 25)
         LForm_Star_Email.TabIndex = 1
@@ -677,12 +648,12 @@ Partial Class Learners
         ' LForm_Lbl_Email
         ' 
         LForm_Lbl_Email.AutoSize = True
-        LForm_Lbl_Email.Font = New Font("Segoe UI", 10F)
+        LForm_Lbl_Email.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
         LForm_Lbl_Email.Location = New Point(33, 6)
         LForm_Lbl_Email.Name = "LForm_Lbl_Email"
-        LForm_Lbl_Email.Size = New Size(73, 19)
+        LForm_Lbl_Email.Size = New Size(88, 17)
         LForm_Lbl_Email.TabIndex = 0
-        LForm_Lbl_Email.Text = "Email ID. : "
+        LForm_Lbl_Email.Text = "Email ID.:"
         ' 
         ' LForm_Panel_DOB
         ' 
@@ -693,20 +664,21 @@ Partial Class Learners
         LForm_Panel_DOB.Controls.Add(LForm_Lbl_DOB)
         LForm_Panel_DOB.Location = New Point(18, 140)
         LForm_Panel_DOB.Name = "LForm_Panel_DOB"
-        LForm_Panel_DOB.Size = New Size(358, 56)
+        LForm_Panel_DOB.Size = New Size(370, 56)
         LForm_Panel_DOB.TabIndex = 6
         ' 
         ' Lform_DateBox_DOB
         ' 
+        Lform_DateBox_DOB.CalendarFont = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
         Lform_DateBox_DOB.CalendarTitleBackColor = Color.Goldenrod
         Lform_DateBox_DOB.CalendarTitleForeColor = Color.DodgerBlue
-        Lform_DateBox_DOB.Font = New Font("Segoe UI", 10F)
+        Lform_DateBox_DOB.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
         Lform_DateBox_DOB.Format = DateTimePickerFormat.Short
-        Lform_DateBox_DOB.Location = New Point(120, 4)
+        Lform_DateBox_DOB.Location = New Point(157, 4)
         Lform_DateBox_DOB.MaxDate = New Date(2007, 12, 31, 0, 0, 0, 0)
         Lform_DateBox_DOB.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Lform_DateBox_DOB.Name = "Lform_DateBox_DOB"
-        Lform_DateBox_DOB.Size = New Size(200, 25)
+        Lform_DateBox_DOB.Size = New Size(175, 23)
         Lform_DateBox_DOB.TabIndex = 5
         Lform_DateBox_DOB.Value = New Date(2007, 12, 31, 0, 0, 0, 0)
         ' 
@@ -714,7 +686,7 @@ Partial Class Learners
         ' 
         LForm_ChkMark_DOB.BackColor = Color.Transparent
         LForm_ChkMark_DOB.Image = CType(resources.GetObject("LForm_ChkMark_DOB.Image"), Image)
-        LForm_ChkMark_DOB.Location = New Point(329, 5)
+        LForm_ChkMark_DOB.Location = New Point(341, 5)
         LForm_ChkMark_DOB.Name = "LForm_ChkMark_DOB"
         LForm_ChkMark_DOB.Size = New Size(20, 20)
         LForm_ChkMark_DOB.SizeMode = PictureBoxSizeMode.StretchImage
@@ -727,7 +699,7 @@ Partial Class Learners
         LForm_ErrMsg_DOB.AutoSize = True
         LForm_ErrMsg_DOB.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LForm_ErrMsg_DOB.ForeColor = Color.Red
-        LForm_ErrMsg_DOB.Location = New Point(120, 31)
+        LForm_ErrMsg_DOB.Location = New Point(157, 31)
         LForm_ErrMsg_DOB.Name = "LForm_ErrMsg_DOB"
         LForm_ErrMsg_DOB.Size = New Size(149, 17)
         LForm_ErrMsg_DOB.TabIndex = 2
@@ -739,7 +711,7 @@ Partial Class Learners
         LForm_Star_DOB.AutoSize = True
         LForm_Star_DOB.Font = New Font("Segoe UI", 14F)
         LForm_Star_DOB.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        LForm_Star_DOB.Location = New Point(96, 3)
+        LForm_Star_DOB.Location = New Point(117, 3)
         LForm_Star_DOB.Name = "LForm_Star_DOB"
         LForm_Star_DOB.Size = New Size(20, 25)
         LForm_Star_DOB.TabIndex = 1
@@ -748,12 +720,12 @@ Partial Class Learners
         ' LForm_Lbl_DOB
         ' 
         LForm_Lbl_DOB.AutoSize = True
-        LForm_Lbl_DOB.Font = New Font("Segoe UI", 10F)
-        LForm_Lbl_DOB.Location = New Point(51, 6)
+        LForm_Lbl_DOB.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_Lbl_DOB.Location = New Point(73, 6)
         LForm_Lbl_DOB.Name = "LForm_Lbl_DOB"
-        LForm_Lbl_DOB.Size = New Size(55, 19)
+        LForm_Lbl_DOB.Size = New Size(64, 17)
         LForm_Lbl_DOB.TabIndex = 0
-        LForm_Lbl_DOB.Text = "D.O.B : "
+        LForm_Lbl_DOB.Text = "D.O.B.:"
         ' 
         ' LForm_Panel_Fname
         ' 
@@ -762,7 +734,7 @@ Partial Class Learners
         LForm_Panel_Fname.Controls.Add(LForm_ErrMsg_Fname)
         LForm_Panel_Fname.Controls.Add(LForm_Star_Fname)
         LForm_Panel_Fname.Controls.Add(LForm_Lbl_Fname)
-        LForm_Panel_Fname.Location = New Point(416, 16)
+        LForm_Panel_Fname.Location = New Point(421, 16)
         LForm_Panel_Fname.Name = "LForm_Panel_Fname"
         LForm_Panel_Fname.Size = New Size(358, 56)
         LForm_Panel_Fname.TabIndex = 1
@@ -781,10 +753,10 @@ Partial Class Learners
         ' 
         ' LForm_TBox_Fname
         ' 
-        LForm_TBox_Fname.Font = New Font("Segoe UI", 10F)
-        LForm_TBox_Fname.Location = New Point(120, 3)
+        LForm_TBox_Fname.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_TBox_Fname.Location = New Point(144, 3)
         LForm_TBox_Fname.Name = "LForm_TBox_Fname"
-        LForm_TBox_Fname.Size = New Size(200, 25)
+        LForm_TBox_Fname.Size = New Size(175, 23)
         LForm_TBox_Fname.TabIndex = 3
         ' 
         ' LForm_ErrMsg_Fname
@@ -792,7 +764,7 @@ Partial Class Learners
         LForm_ErrMsg_Fname.AutoSize = True
         LForm_ErrMsg_Fname.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LForm_ErrMsg_Fname.ForeColor = Color.Red
-        LForm_ErrMsg_Fname.Location = New Point(120, 31)
+        LForm_ErrMsg_Fname.Location = New Point(144, 31)
         LForm_ErrMsg_Fname.Name = "LForm_ErrMsg_Fname"
         LForm_ErrMsg_Fname.Size = New Size(139, 17)
         LForm_ErrMsg_Fname.TabIndex = 2
@@ -804,7 +776,7 @@ Partial Class Learners
         LForm_Star_Fname.AutoSize = True
         LForm_Star_Fname.Font = New Font("Segoe UI", 14F)
         LForm_Star_Fname.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        LForm_Star_Fname.Location = New Point(96, 3)
+        LForm_Star_Fname.Location = New Point(122, 3)
         LForm_Star_Fname.Name = "LForm_Star_Fname"
         LForm_Star_Fname.Size = New Size(20, 25)
         LForm_Star_Fname.TabIndex = 1
@@ -813,12 +785,12 @@ Partial Class Learners
         ' LForm_Lbl_Fname
         ' 
         LForm_Lbl_Fname.AutoSize = True
-        LForm_Lbl_Fname.Font = New Font("Segoe UI", 10F)
-        LForm_Lbl_Fname.Location = New Point(20, 6)
+        LForm_Lbl_Fname.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_Lbl_Fname.Location = New Point(34, 6)
         LForm_Lbl_Fname.Name = "LForm_Lbl_Fname"
-        LForm_Lbl_Fname.Size = New Size(86, 19)
+        LForm_Lbl_Fname.Size = New Size(96, 17)
         LForm_Lbl_Fname.TabIndex = 0
-        LForm_Lbl_Fname.Text = "First Name : "
+        LForm_Lbl_Fname.Text = "First Name:"
         ' 
         ' LForm_Panel_ID
         ' 
@@ -829,14 +801,14 @@ Partial Class Learners
         LForm_Panel_ID.Controls.Add(LForm_Lbl_ID)
         LForm_Panel_ID.Location = New Point(18, 16)
         LForm_Panel_ID.Name = "LForm_Panel_ID"
-        LForm_Panel_ID.Size = New Size(358, 56)
+        LForm_Panel_ID.Size = New Size(370, 56)
         LForm_Panel_ID.TabIndex = 0
         ' 
         ' LForm_ChkMark_ID
         ' 
         LForm_ChkMark_ID.BackColor = Color.Transparent
         LForm_ChkMark_ID.Image = CType(resources.GetObject("LForm_ChkMark_ID.Image"), Image)
-        LForm_ChkMark_ID.Location = New Point(329, 5)
+        LForm_ChkMark_ID.Location = New Point(341, 5)
         LForm_ChkMark_ID.Name = "LForm_ChkMark_ID"
         LForm_ChkMark_ID.Size = New Size(20, 20)
         LForm_ChkMark_ID.SizeMode = PictureBoxSizeMode.StretchImage
@@ -846,10 +818,10 @@ Partial Class Learners
         ' 
         ' LForm_TBox_ID
         ' 
-        LForm_TBox_ID.Font = New Font("Segoe UI", 10F)
-        LForm_TBox_ID.Location = New Point(120, 3)
+        LForm_TBox_ID.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold)
+        LForm_TBox_ID.Location = New Point(157, 3)
         LForm_TBox_ID.Name = "LForm_TBox_ID"
-        LForm_TBox_ID.Size = New Size(200, 25)
+        LForm_TBox_ID.Size = New Size(175, 23)
         LForm_TBox_ID.TabIndex = 3
         ' 
         ' LForm_ErrMsg_ID
@@ -857,7 +829,7 @@ Partial Class Learners
         LForm_ErrMsg_ID.AutoSize = True
         LForm_ErrMsg_ID.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LForm_ErrMsg_ID.ForeColor = Color.Red
-        LForm_ErrMsg_ID.Location = New Point(120, 31)
+        LForm_ErrMsg_ID.Location = New Point(157, 31)
         LForm_ErrMsg_ID.Name = "LForm_ErrMsg_ID"
         LForm_ErrMsg_ID.Size = New Size(191, 17)
         LForm_ErrMsg_ID.TabIndex = 2
@@ -869,7 +841,7 @@ Partial Class Learners
         LForm_Star_ID.AutoSize = True
         LForm_Star_ID.Font = New Font("Segoe UI", 14F)
         LForm_Star_ID.ForeColor = Color.FromArgb(CByte(192), CByte(0), CByte(0))
-        LForm_Star_ID.Location = New Point(96, 3)
+        LForm_Star_ID.Location = New Point(136, 3)
         LForm_Star_ID.Name = "LForm_Star_ID"
         LForm_Star_ID.Size = New Size(20, 25)
         LForm_Star_ID.TabIndex = 1
@@ -878,12 +850,12 @@ Partial Class Learners
         ' LForm_Lbl_ID
         ' 
         LForm_Lbl_ID.AutoSize = True
-        LForm_Lbl_ID.Font = New Font("Segoe UI", 10F)
-        LForm_Lbl_ID.Location = New Point(3, 6)
+        LForm_Lbl_ID.Font = New Font("Cascadia Code SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LForm_Lbl_ID.Location = New Point(9, 6)
         LForm_Lbl_ID.Name = "LForm_Lbl_ID"
-        LForm_Lbl_ID.Size = New Size(103, 19)
+        LForm_Lbl_ID.Size = New Size(128, 17)
         LForm_Lbl_ID.TabIndex = 0
-        LForm_Lbl_ID.Text = "Learners E.ID. : "
+        LForm_Lbl_ID.Text = "Learners E.ID.:"
         ' 
         ' LHeadIcon_Title
         ' 
@@ -891,7 +863,7 @@ Partial Class Learners
         LHeadIcon_Title.Image = CType(resources.GetObject("LHeadIcon_Title.Image"), Image)
         LHeadIcon_Title.Location = New Point(26, 15)
         LHeadIcon_Title.Name = "LHeadIcon_Title"
-        LHeadIcon_Title.Size = New Size(32, 32)
+        LHeadIcon_Title.Size = New Size(40, 40)
         LHeadIcon_Title.SizeMode = PictureBoxSizeMode.StretchImage
         LHeadIcon_Title.TabIndex = 19
         LHeadIcon_Title.TabStop = False
@@ -900,9 +872,9 @@ Partial Class Learners
         ' 
         LMenuIcon_BookLessons.BackColor = Color.Transparent
         LMenuIcon_BookLessons.Image = CType(resources.GetObject("LMenuIcon_BookLessons.Image"), Image)
-        LMenuIcon_BookLessons.Location = New Point(915, 734)
+        LMenuIcon_BookLessons.Location = New Point(911, 730)
         LMenuIcon_BookLessons.Name = "LMenuIcon_BookLessons"
-        LMenuIcon_BookLessons.Size = New Size(32, 32)
+        LMenuIcon_BookLessons.Size = New Size(40, 40)
         LMenuIcon_BookLessons.SizeMode = PictureBoxSizeMode.StretchImage
         LMenuIcon_BookLessons.TabIndex = 42
         LMenuIcon_BookLessons.TabStop = False
@@ -913,7 +885,7 @@ Partial Class Learners
         LMenuIcon_Logout.Image = CType(resources.GetObject("LMenuIcon_Logout.Image"), Image)
         LMenuIcon_Logout.Location = New Point(10, 760)
         LMenuIcon_Logout.Name = "LMenuIcon_Logout"
-        LMenuIcon_Logout.Size = New Size(24, 24)
+        LMenuIcon_Logout.Size = New Size(30, 30)
         LMenuIcon_Logout.SizeMode = PictureBoxSizeMode.StretchImage
         LMenuIcon_Logout.TabIndex = 44
         LMenuIcon_Logout.TabStop = False
@@ -923,7 +895,7 @@ Partial Class Learners
         LMenuLbl_BookLessons.AutoSize = True
         LMenuLbl_BookLessons.BackColor = Color.Transparent
         LMenuLbl_BookLessons.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LMenuLbl_BookLessons.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        LMenuLbl_BookLessons.ForeColor = Color.White
         LMenuLbl_BookLessons.Location = New Point(876, 771)
         LMenuLbl_BookLessons.Name = "LMenuLbl_BookLessons"
         LMenuLbl_BookLessons.Size = New Size(111, 21)
@@ -935,8 +907,8 @@ Partial Class Learners
         LMenuLbl_Courses.AutoSize = True
         LMenuLbl_Courses.BackColor = Color.Transparent
         LMenuLbl_Courses.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LMenuLbl_Courses.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        LMenuLbl_Courses.Location = New Point(742, 771)
+        LMenuLbl_Courses.ForeColor = Color.White
+        LMenuLbl_Courses.Location = New Point(741, 771)
         LMenuLbl_Courses.Name = "LMenuLbl_Courses"
         LMenuLbl_Courses.Size = New Size(69, 21)
         LMenuLbl_Courses.TabIndex = 41
@@ -947,8 +919,8 @@ Partial Class Learners
         LMenuLbl_Trainers.AutoSize = True
         LMenuLbl_Trainers.BackColor = Color.Transparent
         LMenuLbl_Trainers.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LMenuLbl_Trainers.ForeColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        LMenuLbl_Trainers.Location = New Point(586, 771)
+        LMenuLbl_Trainers.ForeColor = Color.White
+        LMenuLbl_Trainers.Location = New Point(584, 771)
         LMenuLbl_Trainers.Name = "LMenuLbl_Trainers"
         LMenuLbl_Trainers.Size = New Size(70, 21)
         LMenuLbl_Trainers.TabIndex = 39
@@ -958,28 +930,100 @@ Partial Class Learners
         ' 
         LMini_Btn.BackColor = Color.Transparent
         LMini_Btn.Image = CType(resources.GetObject("LMini_Btn.Image"), Image)
-        LMini_Btn.Location = New Point(1166, 6)
+        LMini_Btn.Location = New Point(1178, 18)
         LMini_Btn.Name = "LMini_Btn"
-        LMini_Btn.Size = New Size(36, 29)
+        LMini_Btn.Size = New Size(20, 8)
         LMini_Btn.SizeMode = PictureBoxSizeMode.StretchImage
         LMini_Btn.TabIndex = 45
         LMini_Btn.TabStop = False
+        ' 
+        ' TLogout_btnLbl
+        ' 
+        TLogout_btnLbl.AutoSize = True
+        TLogout_btnLbl.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        TLogout_btnLbl.ForeColor = Color.White
+        TLogout_btnLbl.Location = New Point(41, 765)
+        TLogout_btnLbl.Name = "TLogout_btnLbl"
+        TLogout_btnLbl.Size = New Size(57, 20)
+        TLogout_btnLbl.TabIndex = 25
+        TLogout_btnLbl.Text = "Logout"
+        ' 
+        ' TCloseBtn_Icon
+        ' 
+        TCloseBtn_Icon.BackColor = Color.Transparent
+        TCloseBtn_Icon.Image = CType(resources.GetObject("TCloseBtn_Icon.Image"), Image)
+        TCloseBtn_Icon.InitialImage = CType(resources.GetObject("TCloseBtn_Icon.InitialImage"), Image)
+        TCloseBtn_Icon.Location = New Point(1214, 9)
+        TCloseBtn_Icon.Name = "TCloseBtn_Icon"
+        TCloseBtn_Icon.Size = New Size(14, 14)
+        TCloseBtn_Icon.SizeMode = PictureBoxSizeMode.StretchImage
+        TCloseBtn_Icon.TabIndex = 62
+        TCloseBtn_Icon.TabStop = False
+        ' 
+        ' Learners_ID
+        ' 
+        Learners_ID.FillWeight = 39.825573F
+        Learners_ID.HeaderText = "ID"
+        Learners_ID.Name = "Learners_ID"
+        ' 
+        ' Learners_Fname
+        ' 
+        Learners_Fname.FillWeight = 106.391167F
+        Learners_Fname.HeaderText = "First Name"
+        Learners_Fname.Name = "Learners_Fname"
+        ' 
+        ' Learners_Lname
+        ' 
+        Learners_Lname.FillWeight = 106.391167F
+        Learners_Lname.HeaderText = "Last Name"
+        Learners_Lname.Name = "Learners_Lname"
+        ' 
+        ' Learners_DOB
+        ' 
+        Learners_DOB.FillWeight = 106.391167F
+        Learners_DOB.HeaderText = "D. O. B."
+        Learners_DOB.Name = "Learners_DOB"
+        ' 
+        ' Learners_Gender
+        ' 
+        Learners_Gender.FillWeight = 106.391167F
+        Learners_Gender.HeaderText = "Gender"
+        Learners_Gender.Name = "Learners_Gender"
+        ' 
+        ' Learners_Email
+        ' 
+        Learners_Email.FillWeight = 106.391167F
+        Learners_Email.HeaderText = "Email ID"
+        Learners_Email.Name = "Learners_Email"
+        ' 
+        ' Learners_Phone
+        ' 
+        Learners_Phone.FillWeight = 106.391167F
+        Learners_Phone.HeaderText = "Phone No"
+        Learners_Phone.Name = "Learners_Phone"
+        ' 
+        ' Learners_Course
+        ' 
+        Learners_Course.FillWeight = 121.827393F
+        Learners_Course.HeaderText = "Course Enrolled"
+        Learners_Course.Name = "Learners_Course"
         ' 
         ' Learners
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Gold
+        BackColor = Color.FromArgb(CByte(113), CByte(42), CByte(251))
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1240, 800)
         ControlBox = False
+        Controls.Add(TCloseBtn_Icon)
+        Controls.Add(TLogout_btnLbl)
         Controls.Add(LMini_Btn)
         Controls.Add(LMenuIcon_Trainers)
         Controls.Add(LMenuLbl_Learners)
         Controls.Add(LMenuLbl_Dashboard)
         Controls.Add(LMenuIcon_Dashboard)
         Controls.Add(LCloseBtn_Icon)
-        Controls.Add(AppLogoTitle)
         Controls.Add(LMenuIcon_Courses)
         Controls.Add(LMenuIcon_Learners)
         Controls.Add(AppLogo)
@@ -997,13 +1041,11 @@ Partial Class Learners
         CType(LMenuIcon_Trainers, ComponentModel.ISupportInitialize).EndInit()
         CType(LMenuIcon_Dashboard, ComponentModel.ISupportInitialize).EndInit()
         CType(LCloseBtn_Icon, ComponentModel.ISupportInitialize).EndInit()
-        CType(AppLogoTitle, ComponentModel.ISupportInitialize).EndInit()
         CType(LMenuIcon_Courses, ComponentModel.ISupportInitialize).EndInit()
         CType(LMenuIcon_Learners, ComponentModel.ISupportInitialize).EndInit()
         CType(AppLogo, ComponentModel.ISupportInitialize).EndInit()
         L_Dashboard_Panel.ResumeLayout(False)
         L_Dashboard_Panel.PerformLayout()
-        CType(L_ReBtn, ComponentModel.ISupportInitialize).EndInit()
         CType(LearnersDGV, ComponentModel.ISupportInitialize).EndInit()
         LForm_TopPanel.ResumeLayout(False)
         LForm_Panel_Phone.ResumeLayout(False)
@@ -1033,6 +1075,7 @@ Partial Class Learners
         CType(LMenuIcon_BookLessons, ComponentModel.ISupportInitialize).EndInit()
         CType(LMenuIcon_Logout, ComponentModel.ISupportInitialize).EndInit()
         CType(LMini_Btn, ComponentModel.ISupportInitialize).EndInit()
+        CType(TCloseBtn_Icon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -1043,7 +1086,6 @@ Partial Class Learners
     Friend WithEvents LMenuIcon_Dashboard As PictureBox
     Friend WithEvents THeadLbl_Title As Label
     Friend WithEvents LCloseBtn_Icon As PictureBox
-    Friend WithEvents AppLogoTitle As PictureBox
     Friend WithEvents THeadULine_Title As Panel
     Friend WithEvents LMenuIcon_Courses As PictureBox
     Friend WithEvents LMenuIcon_Learners As PictureBox
@@ -1112,6 +1154,10 @@ Partial Class Learners
     Friend WithEvents LForm_CBox_Course As ComboBox
     Friend WithEvents LForm_Btn_Update As Button
     Friend WithEvents LForm_Btn_Add As Button
+    Friend WithEvents LMini_Btn As PictureBox
+    Friend WithEvents LForm_Btn_Delete As Button
+    Friend WithEvents TLogout_btnLbl As Label
+    Friend WithEvents TCloseBtn_Icon As PictureBox
     Friend WithEvents Learners_ID As DataGridViewTextBoxColumn
     Friend WithEvents Learners_Fname As DataGridViewTextBoxColumn
     Friend WithEvents Learners_Lname As DataGridViewTextBoxColumn
@@ -1120,6 +1166,4 @@ Partial Class Learners
     Friend WithEvents Learners_Email As DataGridViewTextBoxColumn
     Friend WithEvents Learners_Phone As DataGridViewTextBoxColumn
     Friend WithEvents Learners_Course As DataGridViewTextBoxColumn
-    Friend WithEvents LMini_Btn As PictureBox
-    Friend WithEvents L_ReBtn As PictureBox
 End Class

@@ -30,7 +30,6 @@
         ' Create an instance of the specified form
         Dim formInstance As New Form()
 
-        ' Assuming the forms are in the same namespace and have the same naming convention
         ' Construct the form class name dynamically and create an instance
         formInstance = DirectCast(Activator.CreateInstance(Type.GetType(Me.GetType().Namespace & "." & formName)), Form)
 

@@ -1,10 +1,12 @@
 ﻿Imports System.IO
 Imports System.Text.RegularExpressions
+Imports Microsoft.VisualBasic.Devices
 Imports Newtonsoft.Json
+Imports PassIT_DrivingSchool.ManageCourses
 
 Public Class ManageCourses
-    Private Sub MCCloseBtn_Icon_Click(sender As Object, e As EventArgs) Handles MCCloseBtn_Icon.Click
-        Me.Hide()
+    Private Sub MCCloseBtn_Icon_Click(sender As Object, e As EventArgs)
+        Hide
     End Sub
 
     ' Menu Icon Click Events
@@ -273,17 +275,19 @@ Public Class ManageCourses
         End Try
     End Sub
 
+
+
+    ' Update Button Click Event END
+
     Private Sub MG_Mini_Btn_Icon_Click(sender As Object, e As EventArgs) Handles MG_Mini_Btn_Icon.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    ' Update Button Click Event END
-
-    Private Sub MC_Refresh_Btn_Click(sender As Object, e As EventArgs) Handles MC_Refresh_Btn.Click
+    Private Sub MC_Refresh_Btn_Click(sender As Object, e As EventArgs)
         MCForm_TBox_ID.Text = ""
         MCForm_TBox_CName.Text = ""
         MCForm_TBox_Desc.Text = ""
-        Me.Refresh()
+        Refresh()
     End Sub
 
     Private Sub MCMenuIcon_Logout_Click(sender As Object, e As EventArgs) Handles MCMenuIcon_Logout.Click
@@ -296,4 +300,23 @@ Public Class ManageCourses
         Dim loginForm As New login()
         loginForm.Show()
     End Sub
+
+    Private Sub BCloseBtn_Icon_Click(sender As Object, e As EventArgs) Handles BCloseBtn_Icon.Click
+        Me.Hide()
+    End Sub
+
+
+    ' DELETE function
+
+    'Public Class Course
+    'Public Property M_Courses_ID As String
+    'Public Property M_Courses_Cname As String
+    'Public Property M_Courses_Desc As String
+    'End Class
+
+    'Private courses As New List(Of Course)()
+
+
+
+
 End Class

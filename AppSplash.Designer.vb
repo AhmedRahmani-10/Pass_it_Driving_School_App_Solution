@@ -35,12 +35,13 @@ Partial Class AppSplash
         ' 
         ' LoadingBar
         ' 
-        LoadingBar.BackColor = Color.Gold
-        LoadingBar.ForeColor = Color.Black
-        LoadingBar.Location = New Point(29, 347)
+        LoadingBar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        LoadingBar.Dock = DockStyle.Bottom
+        LoadingBar.ForeColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        LoadingBar.Location = New Point(0, 387)
         LoadingBar.Margin = New Padding(3, 2, 3, 2)
         LoadingBar.Name = "LoadingBar"
-        LoadingBar.Size = New Size(554, 12)
+        LoadingBar.Size = New Size(614, 6)
         LoadingBar.Style = ProgressBarStyle.Continuous
         LoadingBar.TabIndex = 0
         ' 
@@ -48,17 +49,17 @@ Partial Class AppSplash
         ' 
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(193, 46)
+        PictureBox1.Location = New Point(146, 11)
         PictureBox1.Margin = New Padding(3, 2, 3, 2)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(224, 192)
+        PictureBox1.Size = New Size(300, 300)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
         ' 
         ' AppSplash
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch

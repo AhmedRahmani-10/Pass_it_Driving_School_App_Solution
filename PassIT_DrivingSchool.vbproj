@@ -6,11 +6,11 @@
     <StartupObject>PassIT_DrivingSchool.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>Favicon.ico</ApplicationIcon>
+    <ApplicationIcon>pi_logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Favicon.ico" />
+    <Content Include="pi_logo.ico" />
   </ItemGroup>
 
   <ItemGroup>

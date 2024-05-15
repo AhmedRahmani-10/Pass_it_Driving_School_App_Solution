@@ -378,6 +378,91 @@ Public Class Learners
         End If
     End Sub
 
+    ' List to store learner data END
+
+    ' Update learner data in DGV table
+
+    Private Sub LearnersDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles LearnersDGV.CellClick
+        ' Populating textboxes with data from selected row
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As DataGridViewRow = LearnersDGV.Rows(e.RowIndex)
+            LForm_TBox_ID.Text = selectedRow.Cells("Learners_ID").Value.ToString()
+            LForm_TBox_Fname.Text = selectedRow.Cells("Learners_Fname").Value.ToString()
+            LForm_TBox_Lname.Text = selectedRow.Cells("Learners_Lname").Value.ToString()
+            Lform_DateBox_DOB.Value = Convert.ToDateTime(selectedRow.Cells("Learners_DOB").Value)
+            LForm_TBox_Email.Text = selectedRow.Cells("Learners_Email").Value.ToString()
+            LForm_TBox_Phone.Text = selectedRow.Cells("Learners_Phone").Value.ToString()
+            If selectedRow.Cells("Learners_Course").Value IsNot Nothing Then
+                Dim course As String = selectedRow.Cells("Learners_Course").Value.ToString()
+                If LForm_CBox_Course.Items.Contains(course) Then
+                    LForm_CBox_Course.SelectedItem = course
+                End If
+            End If
+            If selectedRow.Cells("Learners_Gender").Value IsNot Nothing Then
+                Dim gender As String = selectedRow.Cells("Learners_Gender").Value.ToString()
+                If LForm_CBox_Gender.Items.Contains(gender) Then
+                    LForm_CBox_Gender.SelectedItem = gender
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub LForm_Btn_Update_Click(sender As Object, e As EventArgs) Handles LForm_Btn_Update.Click
+        Dim errorMessages As New List(Of String)
+
+        ' Check if any field is empty
+        If String.IsNullOrWhiteSpace(LForm_TBox_ID.Text) Then
+            errorMessages.Add("Enrollment ID is required")
+        End If
+
+        If String.IsNullOrWhiteSpace(LForm_TBox_Fname.Text) Then
+            errorMessages.Add("First name is required")
+        End If
+
+        If String.IsNullOrWhiteSpace(LForm_TBox_Lname.Text) Then
+            errorMessages.Add("Last name is required")
+        End If
+
+        If String.IsNullOrWhiteSpace(LForm_TBox_Email.Text) Then
+            errorMessages.Add("Email ID is required")
+        End If
+
+        If String.IsNullOrWhiteSpace(LForm_TBox_Phone.Text) Then
+            errorMessages.Add("Phone number is required")
+        End If
+
+        If Lform_DateBox_DOB.Value = Date.MinValue Then
+            errorMessages.Add("Date of Birth is required")
+        End If
+
+        If LForm_CBox_Course.SelectedIndex = -1 Then
+            errorMessages.Add("Course selection is required")
+        End If
+
+        If LForm_CBox_Gender.SelectedIndex = -1 Then
+            errorMessages.Add("Gender selection is required")
+        End If
+
+        ' If there are any error messages, display them in a message box
+        If errorMessages.Any Then
+            MessageBox.Show(String.Join(Environment.NewLine, errorMessages), "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ' All mandatory fields are filled, proceed with updating the data
+            Dim selectedRowIndex = LearnersDGV.SelectedRows(0).Index
+
+            ' Update the selected row in the DataGridView
+            LearnersDGV.Rows(selectedRowIndex).SetValues(LForm_TBox_ID.Text, LForm_TBox_Fname.Text, LForm_TBox_Lname.Text, Lform_DateBox_DOB.Value, LForm_CBox_Gender.SelectedItem.ToString, LForm_TBox_Email.Text, LForm_TBox_Phone.Text, LForm_CBox_Course.SelectedItem.ToString)
+
+            ' Save learner data to file if needed
+            SaveLearnerDataToFile()
+
+            MessageBox.Show("Enrollment Updated Successfully")
+        End If
+    End Sub
+
+
+    ' Update learner data in DGV table END
+
     ' Save learner data to file
     Private Sub SaveLearnerDataToFile()
         Try
@@ -390,6 +475,7 @@ Public Class Learners
             MessageBox.Show("Error saving data to file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 
     ' Load learner data from file
     Private Sub LoadLearnerDataFromFile()
@@ -412,9 +498,8 @@ Public Class Learners
         End Try
     End Sub
 
-
-
     ' Form Validation for Add button click event End
+
 
     ' Add array of items in combo box
     Private Sub PopulateCourseComboBox()
@@ -449,7 +534,7 @@ Public Class Learners
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub L_ReBtn_Click(sender As Object, e As EventArgs) Handles L_ReBtn.Click
+    Private Sub L_ReBtn_Click(sender As Object, e As EventArgs)
 
         ' Clear text boxes
         LForm_TBox_ID.Text = ""
@@ -464,7 +549,7 @@ Public Class Learners
         LForm_CBox_Gender.SelectedIndex = -1
 
         ' Refresh the form
-        Me.Refresh()
+        Refresh
 
     End Sub
 
@@ -479,5 +564,60 @@ Public Class Learners
         ' Show the login form again
         Dim loginForm As New login()
         loginForm.Show()
+    End Sub
+
+
+    Private Sub LForm_Btn_Delete_Click(sender As Object, e As EventArgs) Handles LForm_Btn_Delete.Click
+        ' Check if a row is selected
+        If LearnersDGV.SelectedRows.Count > 0 Then
+            ' Get the index of the selected row
+            Dim rowIndex As Integer = LearnersDGV.SelectedRows(0).Index
+
+            ' Remove the selected row from the DataGridView
+            LearnersDGV.Rows.RemoveAt(rowIndex)
+
+            ' Save updated learner data to file
+            SaveLearner_deleteDataToFile()
+
+            MessageBox.Show("Enrollment Deleted Successfully")
+        Else
+            MessageBox.Show("Please select a row to delete.", "No Row Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub SaveLearner_deleteDataToFile()
+        ' Serialize the learners list to JSON
+        Dim json As String = JsonConvert.SerializeObject(learners, Formatting.Indented)
+
+        ' Specify the file path
+        Dim filePath As String = "learners.json"
+
+        ' Write the JSON data to the file
+        System.IO.File.WriteAllText(filePath, json)
+    End Sub
+
+    Private Sub DeleteLearnerDataFromFile(learnerId As String)
+        ' Specify the file path
+        Dim filePath As String = "learners.json"
+
+        ' Read the JSON data from the file
+        Dim json As String = System.IO.File.ReadAllText(filePath)
+
+        ' Deserialize JSON into a list of learners
+        Dim learnersFromFile As List(Of Learner) = JsonConvert.DeserializeObject(Of List(Of Learner))(json)
+
+        ' Remove the learner with the specified ID
+        learnersFromFile.RemoveAll(Function(learner) learner.ID = learnerId)
+
+        ' Serialize the updated list of learners back to JSON
+        Dim updatedJson As String = JsonConvert.SerializeObject(learnersFromFile, Formatting.Indented)
+
+        ' Write the updated JSON data back to the file
+        System.IO.File.WriteAllText(filePath, updatedJson)
+    End Sub
+
+    Private Sub TCloseBtn_Icon_Click(sender As Object, e As EventArgs) Handles TCloseBtn_Icon.Click
+        Me.Hide()
+
     End Sub
 End Class
